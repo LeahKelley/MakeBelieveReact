@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Menu.css';
+import { CartContext } from '../context/CartContext';
+import Cart from '../components/Cart';
 
 const menuItems = [
   {
@@ -65,6 +67,8 @@ const menuItems = [
 ];
 
 export default function Menu() {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <main className="menu-page">
       <h1>Menu</h1>
@@ -83,7 +87,12 @@ export default function Menu() {
             <tr key={item.name}>
               <td>
                 {item.name}
-                <button className="add-to-cart">Add To Cart</button>
+                <button
+                  className="add-to-cart"
+                  onClick={() => addToCart(item)}
+                >
+                  Add To Cart
+                </button>
               </td>
               <td>${item.price.toFixed(2)}</td>
               <td>{item.desc}</td>
@@ -91,12 +100,7 @@ export default function Menu() {
           ))}
         </tbody>
       </table>
-
-      <section className="cart-section">
-        <h2>Your Cart</h2>
-        <p>Your cart is empty.</p>
-        <button className="clear-cart">Clear Cart</button>
-      </section>
+      <Cart />
     </main>
   );
 }
