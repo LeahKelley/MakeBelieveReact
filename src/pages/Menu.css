@@ -1,3 +1,22 @@
+.menu-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1rem 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-content .menu-table {
+    flex: 4;
+}
+
+.menu-content .cart-section {
+    flex: 1;
+}
+
 .menu-page h1 {
     text-align: center;
 }
@@ -16,16 +35,26 @@
 }
 
 .menu-table th {
-    background-color: #f2f2f2;
+    background-color: white;
 }       
 
 .menu-table td button.add-to-cart {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     color: white;
     padding: 10px 20px;
     text-align: center;
-    margin: 4px 2px;
+    margin: 4px 0;
+    float: right;
     cursor: pointer;
+}
+
+.menu-table td:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;   
+}
+
+.menu-table td:first-child button.add-to-cart {
+  font-weight: normal;
 }
 
 .cart-section {
@@ -35,10 +64,20 @@
 }
 
 .cart-section button.clear-cart {
-    background-color: #f44336; /* Red */
+    background-color: #f44336; 
     color: white;
     padding: 10px 20px;
     text-align: center;
     margin: 4px 2px;
     cursor: pointer;
 }   
+
+@media (max-width: 768px) {
+  .menu-content {
+    flex-direction: column;
+  }
+  .menu-content .menu-table,
+  .menu-content .cart-section {
+    width: 100%;  
+  }
+}

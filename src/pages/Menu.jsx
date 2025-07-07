@@ -72,35 +72,36 @@ export default function Menu() {
   return (
     <main className="menu-page">
       <h1>Menu</h1>
-
-      <table className="menu-table">
-        <thead>
-          <tr>
-            <th>Dish</th>
-            <th>Price</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {menuItems.map(item => (
-            <tr key={item.name}>
-              <td>
-                {item.name}
-                <button
-                  className="add-to-cart"
-                  onClick={() => addToCart(item)}
-                >
-                  Add To Cart
-                </button>
-              </td>
-              <td>${item.price.toFixed(2)}</td>
-              <td>{item.desc}</td>
+      <div className="menu-content">
+        <table className="menu-table">
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>Price</th>
+              <th>Description</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <Cart />
+          </thead>
+
+          <tbody>
+            {menuItems.map(item => (
+              <tr key={item.name}>
+                <td>
+                  {item.name}
+                  <button
+                    className="add-to-cart"
+                    onClick={() => addToCart(item)}
+                  >
+                    Add To Cart
+                  </button>
+                </td>
+                <td>${item.price.toFixed(2)}</td>
+                <td>{item.desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <Cart />
+      </div>
     </main>
   );
 }
