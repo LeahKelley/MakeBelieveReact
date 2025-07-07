@@ -13,7 +13,7 @@ export default function Home() {
         }}
       >
         <div className="hero-text">
-          <button>Reservations</button>
+          <button>Order Now!</button>
         </div>
       </div>
     </main>
