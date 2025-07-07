@@ -1,0 +1,14 @@
+:root {
+    --color-primary: #2c3e50;
+    --color-accent: #d4ac6e;
+    --color-bg: #f4f1e5;
+    --color-text: #2c3e50;
+    --color-divider: #ccc8b8;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: sans-serif;
+    margin: 0;
+}
